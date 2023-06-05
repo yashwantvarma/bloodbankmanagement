@@ -1,40 +1,55 @@
 {% load static %}
 <!DOCTYPE html>
-
+<html>
 <head>
-    <style>
-        .xyz{
-          margin-bottom: 0px;
-          background-image: url('{% static "image/homepage.jpg" %}');
-          background-size: cover;
-          background-repeat: no-repeat;
-        }
-      </style>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa; /* Set a background color for the body */
+    }
+
+    .xyz {
       
+      height: calc(100vh - 90px); /* Set the height of the section to 100% of the viewport minus the margin-top value */
+      background-image: url('{% static "image/homepage.jpg" %}');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #fff;
+    }
+    
+
+    .jumbotron {
+      margin: 0;
+      padding: 1rem;
+      background-color: rgba(255, 255, 255, 0.8); /* Add a semi-transparent background color to the jumbotron */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a subtle box shadow for depth */
+    }
+    .footer {
+      background-color: #f8f9fa; /* Set a background color for the footer */
+      text-align: center;
+      color: #6c757d;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
-
-
 <body>
   {% include "blood/navbar.html" %}
-<br>
-<section id="section-jumbotron" style="margin-bottom: 0px;" class="jumbotron jumbotron-fluid d-flex justify-content-center align-items-center xyz">
-    <div class="container text-center">
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-     
-      
-      <br><br><br><br>
-      
-    </div>  
+
+  <section id="section-jumbotron" class="xyz">
+ 
   </section>
 
-
   <div class="jumbotron">
-    <p class="lead text-center">"Opportunities knock the door sometimes, so don't let it go and donate blood."</p>
-    <p class="text-center quote">- LazyCoder</p>
+    <h1 class="lead text-center">"Opportunities knock the door sometimes, so don't let it go and donate blood."</h1>
   </div>
-  {% include "blood/footer.html" %}
-
+  <div class="footer">
+    {% include "blood/footer.html" %}
+  </div>
 
 </body>
-
 </html>
